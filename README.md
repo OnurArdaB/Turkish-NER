@@ -1,4 +1,4 @@
-# Turkish NER with Python Regexes
+# Turkish NER with Python Regular Expressions
 File and folder structure of the project.
 ```
 │   NER Example Data.txt
