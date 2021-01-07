@@ -218,7 +218,7 @@ Turkish contains lots of words that can be interpreted as both for a person or a
     -Rule 20-Name Detection surnames with patterns like oğlu,son etc
     ([A-Z][a-zA-Z]*(?:oğlu|ov|[c,ç]?[i,ü,ı]?ev|son))
 
-Useful Links:
--https://pythex.org/
--https://tscorpus.com/
--https://www.aclweb.org/anthology/P11-3019.pdf
+## Useful Links:
+- https://pythex.org/
+- https://tscorpus.com/
+- https://www.aclweb.org/anthology/P11-3019.pdf
