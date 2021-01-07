@@ -1,4 +1,4 @@
-#Turkish NER with Python Regexes
+# Turkish NER with Python Regexes
 File and folder structure of the project.
 ```
 │   NER Example Data.txt
@@ -27,7 +27,7 @@ File and folder structure of the project.
 │   │   worldcompanies.csv
 │   │   worlduniversities.csv
 ```
-##Lexicon Generation
+## Lexicon Generation
 Files with _parser.py extension:
 
 cities_parser.py,company_parser.py and university_parser.py are used in order to parse information from csv files and re-write the extracted information to their respective lexicon files.(Lexicon file names are written with capital letter.)
@@ -61,11 +61,11 @@ Manually correction issue:
 
 Turkish contains lots of words that can be interpreted as both for a person or a location or a date.Eylül is a great example of this name.It is possible to create rules that can check the before and after of the word in order to come to a decide on what to interpret but there are still some cases that the manually generated queries can not manage to handle these confusions.In order to eliminate this issue some of the Lexicons are eliminated from the Lexicons manually.
 
-#Regular Expressions
+# Regular Expressions
 
-##Location
+## Location
     -Rule 1-Country and Continent Detection via Lexicon
-    There are some very unique words that needs to be decided over a comparison with the words in the lexicon.In this rule any word sequence where every word in it starts with an uppercase and followed by uppercase or lower case words finally followed by whitespace or '-' are captured by a regex and compared with every word inside the locations lexicon.
+    There are some very unique words that needs to be decided over a comparison with the words in the lexicon.In this rule any word sequence where       every word in it starts with an uppercase and followed by uppercase or lower case words finally followed by whitespace or '-' are captured by a     regex and compared with every word inside the locations lexicon.
 
     ((?:[A-ZÇĞİÖŞÜ][a-zçğıöşüA-ZÇĞİÖŞÜ]*[ -]?)+(?:[\.,]*))
 
@@ -112,8 +112,8 @@ Turkish contains lots of words that can be interpreted as both for a person or a
     This rule is created by examining the format on google.In a simple query on google it can be observed that every sentences in this format contained a location name.
     (?:[A-ZÇĞİÖŞÜ][a-zçğıöşü]*) (?:[a-zçğıöşü]*) ((?:[A-ZÇĞİÖŞÜ][a-zçğıöşü]*[\s]?){1,})(?:\'[d,t]{1}[a,e]{1}n) yola çıkan (?:otobüs|kamyon|araba|araç)
 
-##Organization
-#ORGANIZATION
+## Organization
+# ORGANIZATION
     -Rule 9-Procter & Gamble or Procter Procter Procter ... & Gamble Gamble ...
     Despite the fact that this rule might seem thin , it captures a lot names within the right format.
     ((?:[A-ZÇĞİÖŞÜ][a-zçğıöşüA-ZÇĞİÖŞÜ]* )+\& (?:\w+[ ,]?)+)
@@ -129,7 +129,7 @@ Turkish contains lots of words that can be interpreted as both for a person or a
     There are 2 duplicate rules applied where one is for direct matching the organization names from the Lexicon and the other is matchin organization names by adding an end word to a query.
 
 
-##Date
+## Date
     -Rule 11-Date Detection (seperated with /,-,.,|,: formatted as dd/mm/yyyy,mm/dd/yyyy,yyyy/dd/mm,yyyy/mm/dd)
         In Turkish , date sequences are formatted as dd/mm/yyyy but for a more detailed search other formats are implemented.
         A for loop iterates over each seperator since a date can not be formatted as dd/mm.yyyy.Each seperator is located inside the regex and the created queries are appended inside of a list.All of the regular expressions implemented for this part works in a similiar way.Day is ruled as it can not pass any number above 31 and month is ruled as it can not pass any number above 12.
@@ -196,7 +196,7 @@ Turkish contains lots of words that can be interpreted as both for a person or a
         (saat \d+(?:\'[d,t][e,a]))
         They are not independent rules, both of the given above regular expressions create one rule.
 
-##Person
+## Person
     -Rule 17-Person Detection using Titles as the beginning of the context
         This rule uses a list of  titles as a beginning of a string and tries to capture as many words as possible starting with an uppercase and continues with a lowercase or uppercase.It conditions the words to be followed by a whitespace.
         
