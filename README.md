@@ -1,8 +1,6 @@
-CS-445 Project 01 - NER with Rule-Based Approaches (Regex)
-Name:Onur Arda Bodur , ID:00023617
-
+#Turkish NER with Python Regexes
 File and folder structure of the project.
-
+```
 │   NER Example Data.txt
 │   ner.py
 │   README.md
@@ -28,7 +26,8 @@ File and folder structure of the project.
 │   │   worldcities.csv
 │   │   worldcompanies.csv
 │   │   worlduniversities.csv
-
+```
+##Lexicon Generation
 Files with _parser.py extension:
 
 cities_parser.py,company_parser.py and university_parser.py are used in order to parse information from csv files and re-write the extracted information to their respective lexicon files.(Lexicon file names are written with capital letter.)
@@ -62,7 +61,7 @@ Manually correction issue:
 
 Turkish contains lots of words that can be interpreted as both for a person or a location or a date.Eylül is a great example of this name.It is possible to create rules that can check the before and after of the word in order to come to a decide on what to interpret but there are still some cases that the manually generated queries can not manage to handle these confusions.In order to eliminate this issue some of the Lexicons are eliminated from the Lexicons manually.
 
-Regular Expressions
+#Regular Expressions
 
 ##Location
     -Rule 1-Country and Continent Detection via Lexicon
@@ -220,6 +219,6 @@ Regular Expressions
     ([A-Z][a-zA-Z]*(?:oğlu|ov|[c,ç]?[i,ü,ı]?ev|son))
 
 Useful Links:
-https://pythex.org/
-https://tscorpus.com/
-https://www.aclweb.org/anthology/P11-3019.pdf
+-https://pythex.org/
+-https://tscorpus.com/
+-https://www.aclweb.org/anthology/P11-3019.pdf
